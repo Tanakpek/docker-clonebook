@@ -9,10 +9,6 @@ RUN npm i
 RUN npm update
 
 
-BASE_URL=http://localhost:3000
-
-
-
 
 
 
