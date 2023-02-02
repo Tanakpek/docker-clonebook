@@ -9,6 +9,12 @@ RUN npm i
 RUN npm update
 
 
+BASE_URL=http://localhost:3000
+
+
+
+
+
 
 EXPOSE 8000
 
