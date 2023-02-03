@@ -4,6 +4,9 @@ const cors = require("cors");
 const fileUpload = require("express-fileupload");
 const { readdirSync } = require("fs");
 const dotenv = require("dotenv");
+const post = require('./routes/post');
+const user = require('./routes/user');
+const upload = require('./routes/upload');
 dotenv.config();
 
 const app = express();
@@ -15,7 +18,11 @@ app.use(
   })
 );
 //routes
-readdirSync("./routes").map((r) => app.use("/", require("./routes/" + r)));
+//readdirSync("./routes").map((r) => app.use("/", require("./routes/" + r)));
+
+app.use("/",post);
+app.use("/",user);
+app.use("/",upload);
 
 //database
 mongoose
