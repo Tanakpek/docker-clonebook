@@ -36,6 +36,9 @@ export default function LoginForm({ setVisible }) {
       const { data } = await axios.post(
         `${process.env.REACT_APP_BACKEND_URL}/login`,
         {
+          headers:{
+            X-Forwarded-Port: 8000
+          },
           email,
           password,
         }
