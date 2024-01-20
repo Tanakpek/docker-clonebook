@@ -1,14 +1,10 @@
-FROM node:14-slim
+FROM node:14
 
-WORKDIR ./src
 
-COPY ./package.json ./
-
+COPY . ./
 
 RUN npm i
 RUN npm update
-
-
 
 EXPOSE 3000
 

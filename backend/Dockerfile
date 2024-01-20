@@ -1,8 +1,7 @@
-FROM node:14-slim
+FROM node:14
 
-WORKDIR ./src
+COPY . ./
 
-COPY ./package.json ./
 
 
 RUN npm i

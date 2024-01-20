@@ -4,18 +4,25 @@ const cors = require("cors");
 const fileUpload = require("express-fileupload");
 const { readdirSync } = require("fs");
 const dotenv = require("dotenv");
+const post = require('./routes/post');
+const user = require('./routes/user');
+const upload = require('./routes/upload');
 dotenv.config();
 
 const app = express();
 app.use(express.json());
-app.use(cors());
+//app.use(cors());
 app.use(
   fileUpload({
     useTempFiles: true,
   })
 );
 //routes
-readdirSync("./routes").map((r) => app.use("/", require("./routes/" + r)));
+//readdirSync("./routes").map((r) => app.use("/", require("./routes/" + r)));
+
+app.use("/",post);
+app.use("/",user);
+app.use("/",upload);
 
 //database
 mongoose
@@ -25,7 +32,7 @@ mongoose
   .then(() => console.log("database connected successfully"))
   .catch((err) => console.log("error connecting to mongodb", err));
 
-const PORT = process.env.PORT || 8000;
+const PORT = 8000;
 app.listen(PORT, () => {
   console.log(`server is running on port ${PORT}..`);
 });

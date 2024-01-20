@@ -4,6 +4,10 @@ export default function Footer() {
   return (
     <footer className="login_footer">
       <div className="login_footer_wrap">
+        <h3 style={{ fontSize: "12px", marginTop: "10px" }}> Disclaimer: This site is a clone of Facebook, it is intended to showcase a personal project. It is not being used for any commercial purpose.</h3>
+      </div>
+
+      <div className="login_footer_wrap">
         <Link to="/">English(UK)</Link>
         <Link to="/">Français(FR)</Link>
         <Link to="/">العربية</Link>
